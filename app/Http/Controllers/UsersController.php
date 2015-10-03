@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Gate;
 class UsersController extends Controller
 {
 

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Stream</title>
-    @section('styles')
-        <link href="{{ elixir('css/app.css') }}" type="text/css" rel="stylesheet" />
-    @show
+    <meta id="token" value="{{ csrf_token() }}" />
+    <link href="{{ elixir('css/app.css') }}" type="text/css" rel="stylesheet" />
+    @yield('styles')
 </head>
 <body>
     @include('layouts.partials.top-menu')
@@ -16,8 +16,8 @@
         </div>
     </div> <!-- /container -->
 
-    @section('scripts')
-        <script type="text/javascript" src="{{ elixir('js/jqBoot.js') }}"></script>
-    @show
+    <script type="text/javascript" src="{{ elixir('js/jqBoot.js') }}"></script>
+
+    @yield('scripts')
 </body>
 </html>

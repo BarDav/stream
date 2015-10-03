@@ -27,3 +27,11 @@ Route::group(['prefix' => 'dashboard','as' => 'users.','middleware' => 'auth'],f
 {
     Route::get('/',['as' => 'dashboard','uses' => 'UsersController@getDashboard']);
 });
+
+// Stream routes...
+
+Route::group(['prefix' => 'stream','as' => 'stream.','middleware' => 'auth'], function()
+{
+    Route::get('current',['as' => 'current','uses' => 'StreamController@getCurrentStream']);
+    Route::post('enable',['as' => 'current','uses' => 'StreamController@enableStreaming']);
+});
